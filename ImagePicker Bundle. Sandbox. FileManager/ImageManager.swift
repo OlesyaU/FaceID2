@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ImageManager: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private  var imagePecker = UIImagePickerController()
     static let defaultManager = ImageManager()
