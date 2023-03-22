@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="PeG-L1-2y2" detailTextLabel="Rzb-I0-aXw" style="IBUITableViewCellStyleSubtitle" id="q0N-u2-qLY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="PeG-L1-2y2" detailTextLabel="8iF-ox-YR4" style="IBUITableViewCellStyleSubtitle" id="q0N-u2-qLY">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0N-u2-qLY" id="e0y-2Z-un1">
@@ -30,8 +30,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rzb-I0-aXw">
-                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8iF-ox-YR4">
+                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="32.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -49,6 +49,9 @@
                     <navigationItem key="navigationItem" id="Hqz-WA-Ak4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TMF-1k-zxv">
                             <color key="tintColor" cyan="0.39310843540000001" magenta="0.90577121959999995" yellow="0.85231372110000003" black="0.7723594131" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                            <connections>
+                                <action selector="addImageAction:" destination="qII-vt-Wad" id="Os9-pn-PYQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
