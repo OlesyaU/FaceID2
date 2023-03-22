@@ -9,8 +9,6 @@ import UIKit
 
 class TableController: UITableViewController {
     
-    private var counter =  1
-    
     //    берём путь дериктории
     var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     //    достаем контент из этой дериктории
@@ -31,20 +29,17 @@ class TableController: UITableViewController {
     }
     
     @IBAction func addImageAction(_ sender: Any) {
-        counter += 1
         ImageManager.defaultManager.setPicker(in: self)
         
         ImageManager.defaultManager.saveData = {
             data, urlImage in
-            
+   
             do {
-                let urlFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appending(path: "image.jpeg")
-                //                + String(self.counter)
-                //      let urlDirectory =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                //                print(urlDirectory)
-                
-                try? data.write(to: urlFile)
-                //              try  FileManager.default.copyItem(at: urlImage, to: urlDirectory)
+                let urlFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appending(path: "Image \(data)" + "" + String(UUID().description) + ".jpeg")
+               
+              
+                try? data.write(to: urlFile, options: .withoutOverwriting)
+             
                 print(urlFile)
                 self.tableView.reloadData()
             } catch {
@@ -65,7 +60,11 @@ class TableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+ 
+        ImageManager.defaultManager.getMini = { image in
+            cell.imageView?.image = image
+           
+        }
         let item = content[indexPath.row]
         cell.textLabel?.text = item.description
         cell.detailTextLabel?.text = "Item \(indexPath.row + 1)"
