@@ -13,7 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        guard let contentOfDirectory = try? FileManager.default.contentsOfDirectory(atPath: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path()) else {return true}
+        print("Содержимое директории документс: \(contentOfDirectory)")
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
+        var pathTHT = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
+        print(pathTHT)
+      
+        
         return true
     }
 

@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		76369E7A29C8590800D2D92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76369E7929C8590800D2D92D /* AppDelegate.swift */; };
 		76369E7C29C8590800D2D92D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76369E7B29C8590800D2D92D /* SceneDelegate.swift */; };
-		76369E7E29C8590800D2D92D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76369E7D29C8590800D2D92D /* ViewController.swift */; };
 		76369E8129C8590800D2D92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76369E7F29C8590800D2D92D /* Main.storyboard */; };
 		76369E8329C8590A00D2D92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76369E8229C8590A00D2D92D /* Assets.xcassets */; };
 		76369E8629C8590A00D2D92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76369E8429C8590A00D2D92D /* LaunchScreen.storyboard */; };
+		76369E8E29C8F8E400D2D92D /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76369E8D29C8F8E400D2D92D /* TableController.swift */; };
+		76BBF78429C9903700B02A17 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBF78329C9903700B02A17 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		76369E7629C8590800D2D92D /* ImagePicker Bundle. Sandbox. FileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ImagePicker Bundle. Sandbox. FileManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76369E7929C8590800D2D92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76369E7B29C8590800D2D92D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		76369E7D29C8590800D2D92D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		76369E8029C8590800D2D92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76369E8229C8590A00D2D92D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76369E8529C8590A00D2D92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76369E8729C8590A00D2D92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76369E8D29C8F8E400D2D92D /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		76BBF78329C9903700B02A17 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				76369E7929C8590800D2D92D /* AppDelegate.swift */,
 				76369E7B29C8590800D2D92D /* SceneDelegate.swift */,
-				76369E7D29C8590800D2D92D /* ViewController.swift */,
+				76369E8D29C8F8E400D2D92D /* TableController.swift */,
+				76BBF78329C9903700B02A17 /* ImageManager.swift */,
 				76369E7F29C8590800D2D92D /* Main.storyboard */,
 				76369E8229C8590A00D2D92D /* Assets.xcassets */,
 				76369E8429C8590A00D2D92D /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76369E7E29C8590800D2D92D /* ViewController.swift in Sources */,
+				76369E8E29C8F8E400D2D92D /* TableController.swift in Sources */,
 				76369E7A29C8590800D2D92D /* AppDelegate.swift in Sources */,
 				76369E7C29C8590800D2D92D /* SceneDelegate.swift in Sources */,
+				76BBF78429C9903700B02A17 /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
