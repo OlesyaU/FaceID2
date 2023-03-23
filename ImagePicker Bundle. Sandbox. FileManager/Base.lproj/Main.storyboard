@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pwT-bp-k9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSD-nX-tIj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,25 +51,99 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWb-LK-Hah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1482" y="-25"/>
+            <point key="canvasLocation" x="1480" y="-25"/>
         </scene>
         <!--Photo-->
         <scene sceneID="fQt-eN-wUl">
             <objects>
                 <navigationController title="Photo" automaticallyAdjustsScrollViewInsets="NO" id="pwT-bp-k9x" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jbA-EN-UBs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8VW-7L-0we">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qII-vt-Wad" kind="relationship" relationship="rootViewController" id="Av8-Eh-SNJ"/>
+                        <segue destination="qII-vt-Wad" kind="relationship" relationship="rootViewController" id="Uc4-rJ-xeM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETP-x1-bUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802.29007633587787" y="-24.647887323943664"/>
+            <point key="canvasLocation" x="732" y="-25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bGV-Cg-0Ci">
+            <objects>
+                <navigationController id="jSD-nX-tIj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eMf-aJ-20F">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gSG-dD-vRC" kind="relationship" relationship="rootViewController" id="GrS-uk-ps0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7D-LL-VaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-844" y="-25"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="8oz-m0-mfc">
+            <objects>
+                <viewController id="gSG-dD-vRC" customClass="LoginController" customModule="ImagePicker_Bundle__Sandbox__FileManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X6l-jZ-WqG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r2-yL-HYp">
+                                <rect key="frame" x="16" y="668" width="361" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="0.27238070254294289" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hyv-MF-KjY"/>
+                                </constraints>
+                                <color key="tintColor" red="0.13458636090000001" green="0.04281029334" blue="0.02663992502" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Создать пароль"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonAction:" destination="gSG-dD-vRC" eventType="touchUpInside" id="GxR-p0-IOS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your pass (more than 4 symbols)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvR-IN-LdH">
+                                <rect key="frame" x="16" y="253" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jRq-JR-pX0"/>
+                                </constraints>
+                                <color key="textColor" cyan="0.39310843540000001" magenta="0.90577121959999995" yellow="0.85231372110000003" black="0.7723594131" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gMH-2d-UO6"/>
+                        <color key="backgroundColor" red="0.98999272803047411" green="0.9775107192962843" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kvR-IN-LdH" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="Pze-mN-3qx"/>
+                            <constraint firstItem="9r2-yL-HYp" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="S1k-Q5-z0E"/>
+                            <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="kvR-IN-LdH" secondAttribute="trailing" constant="16" id="Xd0-76-5og"/>
+                            <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="9r2-yL-HYp" secondAttribute="trailing" constant="16" id="j1Y-dP-Tsa"/>
+                            <constraint firstItem="kvR-IN-LdH" firstAttribute="top" secondItem="gMH-2d-UO6" secondAttribute="top" constant="150" id="nhc-na-Q1B"/>
+                            <constraint firstItem="gMH-2d-UO6" firstAttribute="bottom" secondItem="9r2-yL-HYp" secondAttribute="bottom" constant="100" id="yfZ-XE-dRA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rTD-7c-W5l"/>
+                    <connections>
+                        <outlet property="button" destination="9r2-yL-HYp" id="JKK-3W-ikF"/>
+                        <outlet property="passTextField" destination="kvR-IN-LdH" id="0UZ-Gx-BtC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZe-Wn-oSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="-25"/>
         </scene>
     </scenes>
     <resources>
