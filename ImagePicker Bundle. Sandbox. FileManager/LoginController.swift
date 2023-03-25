@@ -62,11 +62,12 @@ class LoginController: UIViewController {
             keyChain.set(pass1, forKey: String(key))
             arrayPasswords.append(pass1)
             button.setTitle("Повторите пароль", for: .normal)
-            stateLabel.text = "Необходимо ввести пароль ещё раз"
+            stateLabel?.text = "Необходимо ввести пароль ещё раз"
             passTextField.text = nil
         } else if  comparePasswords(pass1) ,(counter >= 1)  || stateSwitch.isOn {
             isLogin = true
-            navigationController?.pushViewController(TableController(), animated: true)
+            goToSecondVC()
+            
         } else  if pass1.count < 4 {
             counter = 0
             passTextField.text = nil
@@ -91,6 +92,19 @@ class LoginController: UIViewController {
         })
         print(arrayPasswords)
     }
+    private func goToSecondVC(){
+        let tab = UITabBarController()
+        let filesVC = TableController()
+        filesVC.title = "Files"
+        filesVC.tabBarItem.image = UIImage(systemName: "list.bullet")
+        let settingsVC = SettingsController()
+        settingsVC.title = "Settings"
+        settingsVC.tabBarItem.image = UIImage(systemName: "gearshape.fill")
+        UITabBar.appearance().backgroundColor = .secondarySystemBackground
+        tab.tabBar.tintColor = .brown
+        tab.viewControllers = [filesVC, settingsVC]
+        navigationController?.pushViewController(tab, animated: true)
+    }
     
     private func setState(state: State) {
         switch state {
@@ -101,7 +115,7 @@ class LoginController: UIViewController {
                 passTextField.text = nil
                 counter = 0
             case .knownUser:
-                stateLabel.text = "У меня есть пароль"
+                stateLabel?.text = "У меня есть пароль"
                 button.setTitle("Ввести пароль", for: .normal)
                 stateSwitch.isOn = true
         }

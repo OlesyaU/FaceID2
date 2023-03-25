@@ -18,6 +18,7 @@
 		76E32BEA29CCF08900ABB458 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E32BE929CCF08900ABB458 /* LoginController.swift */; };
 		76E32BED29CCFB0E00ABB458 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76E32BEC29CCFB0E00ABB458 /* KeychainSwift */; };
 		76E32BEF29CD828400ABB458 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E32BEE29CD828400ABB458 /* LoginManager.swift */; };
+		76E32BF529CF871E00ABB458 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E32BF429CF871E00ABB458 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		76E32BAA29CB97E500ABB458 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		76E32BE929CCF08900ABB458 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		76E32BEE29CD828400ABB458 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		76E32BF429CF871E00ABB458 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				76BBF78329C9903700B02A17 /* ImageManager.swift */,
 				76E32BE929CCF08900ABB458 /* LoginController.swift */,
 				76E32BEE29CD828400ABB458 /* LoginManager.swift */,
+				76E32BF429CF871E00ABB458 /* SettingsController.swift */,
 				76369E7F29C8590800D2D92D /* Main.storyboard */,
 				76369E8229C8590A00D2D92D /* Assets.xcassets */,
 				76369E8429C8590A00D2D92D /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E32BF529CF871E00ABB458 /* SettingsController.swift in Sources */,
 				76E32BAB29CB97E500ABB458 /* TODO.swift in Sources */,
 				76E32BEA29CCF08900ABB458 /* LoginController.swift in Sources */,
 				76E32BEF29CD828400ABB458 /* LoginManager.swift in Sources */,

@@ -8,10 +8,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table Controller-->
+        <!--SettingsVC-->
+        <scene sceneID="0hE-Bl-o6u">
+            <objects>
+                <tableViewController title="SettingsVC" id="VJi-IK-zDi" customClass="SettingsController" customModule="ImagePicker_Bundle__Sandbox__FileManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NWi-LW-ndB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fuQ-63-aD9">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fuQ-63-aD9" id="9ly-7h-Itj">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VJi-IK-zDi" id="h90-Ec-cBf"/>
+                            <outlet property="delegate" destination="VJi-IK-zDi" id="bUX-Cv-Pg9"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="BqV-Xx-De1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrq-xS-Kaj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="516"/>
+        </scene>
+        <!--ImageVC-->
         <scene sceneID="qHt-4E-mVx">
             <objects>
-                <tableViewController id="qII-vt-Wad" customClass="TableController" customModule="ImagePicker_Bundle__Sandbox__FileManager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="ImageVC" id="qII-vt-Wad" customClass="TableController" customModule="ImagePicker_Bundle__Sandbox__FileManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VIB-8Z-fqh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +62,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85814112190000003" green="1" blue="0.99127532679999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,6 +70,7 @@
                             <outlet property="delegate" destination="qII-vt-Wad" id="uiL-Jv-FAe"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" image="gearshape.fill" catalog="system" id="EEk-hD-Aew"/>
                     <navigationItem key="navigationItem" id="Hqz-WA-Ak4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TMF-1k-zxv">
                             <color key="tintColor" cyan="0.39310843540000001" magenta="0.90577121959999995" yellow="0.85231372110000003" black="0.7723594131" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -51,26 +82,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWb-LK-Hah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="-25"/>
-        </scene>
-        <!--Photo-->
-        <scene sceneID="fQt-eN-wUl">
-            <objects>
-                <navigationController title="Photo" automaticallyAdjustsScrollViewInsets="NO" id="pwT-bp-k9x" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="jbA-EN-UBs"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8VW-7L-0we">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qII-vt-Wad" kind="relationship" relationship="rootViewController" id="Uc4-rJ-xeM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ETP-x1-bUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="732" y="-25"/>
+            <point key="canvasLocation" x="738" y="-161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bGV-Cg-0Ci">
@@ -79,6 +91,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eMf-aJ-20F">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cyan="0.39310843540000001" magenta="0.90577121959999995" yellow="0.85231372110000003" black="0.7723594131" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="gSG-dD-vRC" kind="relationship" relationship="rootViewController" id="GrS-uk-ps0"/>
@@ -168,6 +181,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
