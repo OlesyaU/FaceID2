@@ -1,5 +1,5 @@
-# ImagePicker-Bundle.-Sandbox.-FileManager
-ImagePicker. Bundle.SandBox.FileManager
+# ImagePicker-Bundle.-Sandbox.-FileManager  UserDefaults, Keychain, On-demand Resources
+ImagePicker. Bundle.SandBox.FileManager  UserDefaults, Keychain, On-demand Resources
 Приложение для отображения контента в Documents
 
 При старте приложения показывается контент директории Documents. В навигейшн баре есть одна кнопка:
