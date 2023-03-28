@@ -68,11 +68,11 @@ class TableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        
         ImageManager.defaultManager.getMini = { image in
-            cell.imageView?.image = image
+            tableView.cellForRow(at: indexPath)?.imageView?.image = image
 
-        }
+}
         let item = content[indexPath.row]
         cell.textLabel?.text = item.description
         cell.detailTextLabel?.text = "Item \(indexPath.row + 1)"
