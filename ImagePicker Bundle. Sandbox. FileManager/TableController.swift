@@ -26,16 +26,24 @@ class TableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.navigationItem.setRightBarButton(.init(barButtonSystemItem: .add, target: self, action: #selector(addImageAction(_:))), animated: true)
+        self.navigationItem.rightBarButtonItem?.tintColor = .brown
+        navigationItem.titleView?.tintColor = .brown
+        self.title = "FILES"
     }
     
-    @IBAction func addImageAction(_ sender: Any) {
+    @IBAction @objc func addImageAction(_ sender: Any) {
         ImageManager.defaultManager.setPicker(in: self)
         
         ImageManager.defaultManager.saveData = {
             data, urlImage in
    
             do {
-                let urlFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appending(path: "Image \(data)" + "" + String(UUID().description) + ".jpeg")
+                let upLatter = String().uppercase.randomElement()
+                let number = String().digits.randomElement()
+                let lowLatter = String().lowercase.randomElement()
+                
+                let urlFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appending(path: "Image \(upLatter!) \(number!) \(lowLatter!)" + "" + ".jpeg")
                
               
                 try? data.write(to: urlFile, options: .withoutOverwriting)
@@ -77,12 +85,9 @@ class TableController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            let path =  path + "/" + content[indexPath.row]
+           let path =  path + "/" + content[indexPath.row]
             try?  FileManager.default.removeItem(atPath: path)
-            
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
+           tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }

@@ -18,8 +18,8 @@ class LoginController: UIViewController {
     private let keyChain = KeychainSwift()
     private var arrayPasswords = [String]()
     @IBOutlet weak var stateSwitch: UISwitch!
-    @IBOutlet weak var stateLabel: UILabel!
-    
+    @IBOutlet var stateLabel: UILabel!
+     
     enum State {
         case newUser
         case knownUser
@@ -36,11 +36,11 @@ class LoginController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        passTextField.text = nil
+      passTextField?.text = nil
+       
     }
     override func viewDidDisappear(_ animated: Bool) {
-        
-        setState(state: .knownUser)
+       setState(state: .knownUser)
     }
     
     @IBAction func switchAction(_ sender: Any) {
@@ -59,10 +59,11 @@ class LoginController: UIViewController {
         if   !stateSwitch.isOn, counter == 0  {
             key = String(Float.random(in: 0.00...100.00))
             counter += 1
+            print(counter)
             keyChain.set(pass1, forKey: String(key))
             arrayPasswords.append(pass1)
             button.setTitle("Повторите пароль", for: .normal)
-            stateLabel?.text = "Необходимо ввести пароль ещё раз"
+            stateLabel.text = "Необходимо ввести пароль ещё раз"
             passTextField.text = nil
         } else if  comparePasswords(pass1) ,(counter >= 1)  || stateSwitch.isOn {
             isLogin = true
@@ -94,7 +95,8 @@ class LoginController: UIViewController {
     }
     private func goToSecondVC(){
         let tab = UITabBarController()
-        let filesVC = TableController()
+        let filesVC = UINavigationController(rootViewController: TableController())
+   
         filesVC.title = "Files"
         filesVC.tabBarItem.image = UIImage(systemName: "list.bullet")
         let settingsVC = SettingsController()
@@ -102,20 +104,20 @@ class LoginController: UIViewController {
         settingsVC.tabBarItem.image = UIImage(systemName: "gearshape.fill")
         UITabBar.appearance().backgroundColor = .secondarySystemBackground
         tab.tabBar.tintColor = .brown
-        tab.viewControllers = [filesVC, settingsVC]
-        navigationController?.pushViewController(tab, animated: true)
+        tab.viewControllers =  [filesVC, settingsVC]
+        navigationController?.pushViewController(tab , animated: true)
     }
     
     private func setState(state: State) {
         switch state {
             case .newUser:
-                stateLabel.text = "Я новенький. Хочу сохраниться"
-                button.setTitle("Создать пароль", for: .normal)
-                stateSwitch.isOn = false
-                passTextField.text = nil
-                counter = 0
+               stateLabel?.text = "Я новенький. Хочу сохраниться"
+                   stateSwitch?.isOn = false
+                   passTextField?.text = nil
+                   counter = 0
+   
             case .knownUser:
-                stateLabel?.text = "У меня есть пароль"
+                stateLabel.text = "У меня есть пароль"
                 button.setTitle("Ввести пароль", for: .normal)
                 stateSwitch.isOn = true
         }

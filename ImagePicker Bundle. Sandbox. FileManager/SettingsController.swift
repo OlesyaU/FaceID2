@@ -8,38 +8,45 @@
 import UIKit
 
 class SettingsController: UITableViewController {
-private let settings = ["Сортировать файлы, Поменять пароль"]
+private let settings = ["Сортировать файлы", "Поменять пароль"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        view.backgroundColor = .green
-       
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tintColor = UIColor(red: 115, green: 75, blue: 55, alpha: 1)
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+ override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settings.count
     }
+ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = settings[indexPath.row]
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+   return cell
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
+        if indexPath.row == 0 {
+            let items = [">", "<"]
+            let segment = UISegmentedControl(items: items)
+            segment.center.y = cell!.contentView.center.y
+            segment.center.x = cell!.center.x + 120
+            segment.bounds.size = CGSize(width: 100, height: 30)
+            segment.selectedSegmentTintColor = .systemBrown
+            cell?.addSubview(segment)
+        } else {
+            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVCSID")
+            present( UINavigationController(rootViewController: loginVC) , animated: true)
+        }
+ }
+    
 
     /*
     // Override to support conditional editing of the table view.
