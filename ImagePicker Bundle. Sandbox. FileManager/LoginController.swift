@@ -21,7 +21,7 @@ class LoginController: UIViewController {
     private var arrayPasswords = [String]()
     @IBOutlet weak var stateSwitch: UISwitch!
     @IBOutlet var stateLabel: UILabel!
-     
+
     enum State {
         case newUser
         case knownUser
@@ -33,16 +33,16 @@ class LoginController: UIViewController {
         setState(state: .newUser)
         allPass()
         
-//        keyChain.clear()
+        //        keyChain.clear()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      passTextField?.text = nil
-       
+        passTextField?.text = nil
+
     }
     override func viewDidDisappear(_ animated: Bool) {
-       setState(state: .knownUser)
+        setState(state: .knownUser)
     }
     
     @IBAction func switchAction(_ sender: Any) {
@@ -54,20 +54,19 @@ class LoginController: UIViewController {
     }
     
     @IBAction func autorizationAction(_ sender: Any) {
-        print("Autorization buton tapped")
-let aut = LocalAutorizationService()
-
+        let aut =  LocalAutorizationService()
         aut.authorizeIfPossible { bool in
-            print(bool)
-            self.autorizationLabel.text = String(bool)
-            if bool{
-                self.autorizationLabel.text = String(bool)
-            } else {
-                print("aut not finished")
-                self.autorizationLabel.text = String(bool)
+            DispatchQueue.main.async {
+                if bool{
+                    self.autorizationLabel.text = "Авторизация прошла успшено"
+                } else {
+
+                    self.autorizationLabel.text = "Авторизация не пройдена"
+                }
             }
         }
- }
+    }
+
     @IBAction func buttonAction(_ sender: Any) {
         guard let pass1 = passTextField.text else {
             return
@@ -113,7 +112,7 @@ let aut = LocalAutorizationService()
     private func goToSecondVC(){
         let tab = UITabBarController()
         let filesVC = UINavigationController(rootViewController: TableController())
-   
+
         filesVC.title = "Files"
         filesVC.tabBarItem.image = UIImage(systemName: "list.bullet")
         let settingsVC = SettingsController()
@@ -128,21 +127,15 @@ let aut = LocalAutorizationService()
     private func setState(state: State) {
         switch state {
             case .newUser:
-               stateLabel?.text = "Я новенький. Хочу сохраниться"
-                   stateSwitch?.isOn = false
-                   passTextField?.text = nil
-                   counter = 0
-   
+                stateLabel?.text = "Я новенький. Хочу сохраниться"
+                stateSwitch?.isOn = false
+                passTextField?.text = nil
+                counter = 0
+
             case .knownUser:
                 stateLabel.text = "У меня есть пароль"
                 button.setTitle("Ввести пароль", for: .normal)
                 stateSwitch.isOn = true
         }
     }
-
-
-    private func identifierYourself() {
-        
-    }
-
 }

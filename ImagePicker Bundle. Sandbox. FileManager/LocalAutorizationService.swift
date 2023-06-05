@@ -8,33 +8,24 @@
 import Foundation
 import LocalAuthentication
 
-
 final class LocalAutorizationService {
-    let laContext = LAContext()
-    var error: NSError?
-
+    private let laContext = LAContext()
+    private var error: NSError?
 
     func authorizeIfPossible(_ authorizationFinished: @escaping (Bool) -> Void){
-
         if laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-
             let reason = "Идентифицируйте себя"
             laContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
-
+                authorizationFinished(true)
                 if success {
-                    DispatchQueue.main.async { [unowned self] in
-                        print("Успешная авторизация")
-                    }
+                    print("Успешная авторизация")
                 }
             }
 
         } else {
+            authorizationFinished(false)
             print(error?.localizedDescription)
             print("Face/Touch ID не найден")
         }
-        print(laContext.interactionNotAllowed)
     }
-
-    
-
 }
