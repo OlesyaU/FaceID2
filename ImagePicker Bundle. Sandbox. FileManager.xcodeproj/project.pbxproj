@@ -322,6 +322,7 @@
 				DEVELOPMENT_TEAM = VD9W7NWT69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ImagePicker Bundle. Sandbox. FileManager/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID instead of a password to access your account.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -350,6 +351,7 @@
 				DEVELOPMENT_TEAM = VD9W7NWT69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ImagePicker Bundle. Sandbox. FileManager/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID instead of a password to access your account.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

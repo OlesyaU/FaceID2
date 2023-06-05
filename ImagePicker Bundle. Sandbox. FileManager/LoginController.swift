@@ -10,6 +10,7 @@ import KeychainSwift
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var autorizationLabel: UILabel!
     @IBOutlet weak var autorizationButton: UIButton!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var button: UIButton!
@@ -54,7 +55,19 @@ class LoginController: UIViewController {
     
     @IBAction func autorizationAction(_ sender: Any) {
         print("Autorization buton tapped")
-    }
+let aut = LocalAutorizationService()
+
+        aut.authorizeIfPossible { bool in
+            print(bool)
+            self.autorizationLabel.text = String(bool)
+            if bool{
+                self.autorizationLabel.text = String(bool)
+            } else {
+                print("aut not finished")
+                self.autorizationLabel.text = String(bool)
+            }
+        }
+ }
     @IBAction func buttonAction(_ sender: Any) {
         guard let pass1 = passTextField.text else {
             return
@@ -126,4 +139,10 @@ class LoginController: UIViewController {
                 stateSwitch.isOn = true
         }
     }
+
+
+    private func identifierYourself() {
+        
+    }
+
 }
