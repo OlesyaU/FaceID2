@@ -13,6 +13,7 @@
 		76369E8329C8590A00D2D92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76369E8229C8590A00D2D92D /* Assets.xcassets */; };
 		76369E8629C8590A00D2D92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76369E8429C8590A00D2D92D /* LaunchScreen.storyboard */; };
 		76369E8E29C8F8E400D2D92D /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76369E8D29C8F8E400D2D92D /* TableController.swift */; };
+		767073D42A2DB87D007FC469 /* LocalAutorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767073D32A2DB87D007FC469 /* LocalAutorizationService.swift */; };
 		76BBF78429C9903700B02A17 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBF78329C9903700B02A17 /* ImageManager.swift */; };
 		76E32BAB29CB97E500ABB458 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E32BAA29CB97E500ABB458 /* TODO.swift */; };
 		76E32BEA29CCF08900ABB458 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E32BE929CCF08900ABB458 /* LoginController.swift */; };
@@ -30,6 +31,7 @@
 		76369E8529C8590A00D2D92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76369E8729C8590A00D2D92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76369E8D29C8F8E400D2D92D /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		767073D32A2DB87D007FC469 /* LocalAutorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAutorizationService.swift; sourceTree = "<group>"; };
 		76BBF78329C9903700B02A17 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		76E32BAA29CB97E500ABB458 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		76E32BE929CCF08900ABB458 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				76BBF78329C9903700B02A17 /* ImageManager.swift */,
 				76E32BE929CCF08900ABB458 /* LoginController.swift */,
 				76E32BEE29CD828400ABB458 /* LoginManager.swift */,
+				767073D32A2DB87D007FC469 /* LocalAutorizationService.swift */,
 				76E32BF429CF871E00ABB458 /* SettingsController.swift */,
 				76369E7F29C8590800D2D92D /* Main.storyboard */,
 				76369E8229C8590A00D2D92D /* Assets.xcassets */,
@@ -164,6 +167,7 @@
 				76E32BF529CF871E00ABB458 /* SettingsController.swift in Sources */,
 				76E32BAB29CB97E500ABB458 /* TODO.swift in Sources */,
 				76E32BEA29CCF08900ABB458 /* LoginController.swift in Sources */,
+				767073D42A2DB87D007FC469 /* LocalAutorizationService.swift in Sources */,
 				76E32BEF29CD828400ABB458 /* LoginManager.swift in Sources */,
 				76369E8E29C8F8E400D2D92D /* TableController.swift in Sources */,
 				76369E7A29C8590800D2D92D /* AppDelegate.swift in Sources */,
@@ -318,6 +322,7 @@
 				DEVELOPMENT_TEAM = VD9W7NWT69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ImagePicker Bundle. Sandbox. FileManager/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID instead of a password to access your account.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -346,6 +351,7 @@
 				DEVELOPMENT_TEAM = VD9W7NWT69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ImagePicker Bundle. Sandbox. FileManager/Info.plist";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID instead of a password to access your account.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

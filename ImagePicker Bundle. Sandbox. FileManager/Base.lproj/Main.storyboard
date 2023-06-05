@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSD-nX-tIj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSD-nX-tIj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,25 +146,63 @@
                                 <color key="textColor" red="0.13458636090000001" green="0.04281029334" blue="0.02663992502" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at5-mb-Wxp">
+                                <rect key="frame" x="16" y="568" width="361" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.27238070250000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Jp-eW-SVy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Авторизоваться по биометрии">
+                                    <color key="baseForegroundColor" red="0.23804509218293002" green="0.12989383313590647" blue="0.08514799913114815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="autorizationAction:" destination="gSG-dD-vRC" eventType="touchUpInside" id="hpm-t6-zsW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glx-sQ-THp">
+                                <rect key="frame" x="16" y="468" width="361" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.2380450922" green="0.12989383309999999" blue="0.085147999129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PM6-yY-GbM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMH-2d-UO6"/>
                         <color key="backgroundColor" red="0.98999272803047411" green="0.9775107192962843" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0o3-22-f7I" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="0ul-Rt-rjr"/>
+                            <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="at5-mb-Wxp" secondAttribute="trailing" constant="16" id="2E4-A5-JEz"/>
+                            <constraint firstItem="at5-mb-Wxp" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="52Y-wu-JA8"/>
                             <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="0o3-22-f7I" secondAttribute="trailing" constant="16" id="AII-sl-wVR"/>
+                            <constraint firstItem="glx-sQ-THp" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="Czb-wb-8Io"/>
+                            <constraint firstItem="9r2-yL-HYp" firstAttribute="top" secondItem="at5-mb-Wxp" secondAttribute="bottom" constant="50" id="Gve-ps-yzc"/>
                             <constraint firstItem="yJa-oU-AmV" firstAttribute="centerX" secondItem="X6l-jZ-WqG" secondAttribute="centerX" id="JCy-l5-wgI"/>
                             <constraint firstItem="kvR-IN-LdH" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="Pze-mN-3qx"/>
                             <constraint firstItem="9r2-yL-HYp" firstAttribute="leading" secondItem="gMH-2d-UO6" secondAttribute="leading" constant="16" id="S1k-Q5-z0E"/>
                             <constraint firstItem="yJa-oU-AmV" firstAttribute="top" secondItem="kvR-IN-LdH" secondAttribute="bottom" constant="50" id="Xas-A4-Pa2"/>
                             <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="kvR-IN-LdH" secondAttribute="trailing" constant="16" id="Xd0-76-5og"/>
+                            <constraint firstItem="at5-mb-Wxp" firstAttribute="top" secondItem="glx-sQ-THp" secondAttribute="bottom" constant="50" id="gEM-Mg-cox"/>
                             <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="9r2-yL-HYp" secondAttribute="trailing" constant="16" id="j1Y-dP-Tsa"/>
                             <constraint firstItem="0o3-22-f7I" firstAttribute="top" secondItem="gMH-2d-UO6" secondAttribute="top" constant="40" id="lZc-bO-Pfq"/>
                             <constraint firstItem="kvR-IN-LdH" firstAttribute="top" secondItem="gMH-2d-UO6" secondAttribute="top" constant="150" id="nhc-na-Q1B"/>
+                            <constraint firstItem="gMH-2d-UO6" firstAttribute="trailing" secondItem="glx-sQ-THp" secondAttribute="trailing" constant="16" id="qXA-b2-WEr"/>
                             <constraint firstItem="gMH-2d-UO6" firstAttribute="bottom" secondItem="9r2-yL-HYp" secondAttribute="bottom" constant="100" id="yfZ-XE-dRA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rTD-7c-W5l"/>
                     <connections>
+                        <outlet property="autorizationButton" destination="at5-mb-Wxp" id="5hP-bx-aAU"/>
+                        <outlet property="autorizationLabel" destination="glx-sQ-THp" id="oW0-0C-hXx"/>
                         <outlet property="button" destination="9r2-yL-HYp" id="JKK-3W-ikF"/>
                         <outlet property="passTextField" destination="kvR-IN-LdH" id="0UZ-Gx-BtC"/>
                         <outlet property="stateLabel" destination="0o3-22-f7I" id="qc8-w6-AMX"/>
