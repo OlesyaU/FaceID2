@@ -10,6 +10,7 @@ import KeychainSwift
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var autorizationButton: UIButton!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var button: UIButton!
     private var isLogin = false
@@ -51,6 +52,9 @@ class LoginController: UIViewController {
         }
     }
     
+    @IBAction func autorizationAction(_ sender: Any) {
+        print("Autorization buton tapped")
+    }
     @IBAction func buttonAction(_ sender: Any) {
         guard let pass1 = passTextField.text else {
             return
